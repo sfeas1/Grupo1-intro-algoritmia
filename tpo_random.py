@@ -1,5 +1,9 @@
 import random
 
+# Ordenar por tiempo (de menor a mayor)
+def obtener_tiempo(competidor):
+    return competidor["tiempo_seg"]
+
 # Validación de cantidad mínima
 N = int(input("Ingrese la cantidad de competidores (mínimo 3): "))
 while N < 3:
@@ -10,7 +14,9 @@ while N < 3:
 print("\n====================")
 print("   RECORD ACTUAL  ")
 print("====================\n")
-horas_r = int(input("Horas: "))
+horas_r = int(input("Horas(0-3): "))
+while horas_r < 0 or horas_r > 3:
+    print("Valor inválido.")
 minutos_r = int(input("Minutos (0-59): "))
 while minutos_r < 0 or minutos_r > 59:
     print("Valor inválido.")
@@ -57,11 +63,7 @@ for i in range(N):
         tiempos_por_pais[pais] = {"suma": 0, "cantidad": 0}
     tiempos_por_pais[pais]["suma"] += tiempo_seg
     tiempos_por_pais[pais]["cantidad"] += 1
-
-# Ordenar por tiempo (de menor a mayor)
-def obtener_tiempo(competidor):
-    return competidor["tiempo_seg"]
-
+    
 competidores.sort(key=obtener_tiempo)
 # Mostrar si el mejor tiempo supera el récord
 mejor = competidores[0]
