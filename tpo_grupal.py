@@ -80,7 +80,6 @@ prom_s = promedio_seg % 60
 
 print("Tiempo promedio general: ", prom_h, "h", prom_m, "m", prom_s, "s")
 
-# Agrupar por país y calcular promedios
 print("\n====================")
 print(" PROMEDIO POR PAÍS ")
 print("====================\n")
