@@ -17,6 +17,7 @@ print("====================\n")
 horas_r = int(input("Horas(0-3): "))
 while horas_r < 0 or horas_r > 3:
     print("Valor inválido.")
+    horas_r = int(input("Horas(0-3): "))
 minutos_r = int(input("Minutos (0-59): "))
 while minutos_r < 0 or minutos_r > 59:
     print("Valor inválido.")
