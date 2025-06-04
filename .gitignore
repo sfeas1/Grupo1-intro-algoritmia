@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 *.tpo_grupal.py
+=======
+.vscode/*
+.idea/*
+>>>>>>> 955eb38611028be4cb32e7132ac8b02c63563ee0
