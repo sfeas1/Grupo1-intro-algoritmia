@@ -332,4 +332,7 @@ for pais in tiempos_por_pais:
     h = promedio // 3600
     m = (promedio % 3600) // 60
     s = promedio % 60
-    print(f"{pais} ({cant} competidores): {h}h {m}m {s}s")
+    plural = ""
+    if(cant > 1):
+        plural = "es"
+    print(f"{pais} ({cant} competidor{plural}): {h}h {m}m {s}s")
