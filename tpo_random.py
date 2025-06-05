@@ -1,8 +1,243 @@
 import random
 
+nombres = [
+    "Alejandro",
+    "Juan",
+    "Pedro",
+    "Luis",
+    "Carlos",
+    "Eduardo",
+    "Miguel",
+    "José",
+    "Francisco",
+    "Antonio",
+    "Diego",
+    "Martín",
+    "Adrián",
+    "Daniel",
+    "Andrés",
+    "Rafael",
+    "Jorge",
+    "Sergio",
+    "Pablo",
+    "Víctor",
+    "Alberto",
+    "Fernando",
+    "Raúl",
+    "David",
+    "Guillermo",
+    "Ignacio",
+    "Joaquín",
+    "Nicolás",
+    "Ricardo",
+    "Rubén",
+    "Santiago",
+    "Tomás",
+    "Sebastián",
+    "Bruno",
+    "Manuel",
+    "Esteban",
+    "Óscar",
+    "Héctor",
+    "Germán",
+    "Cristian",
+    "Javier",
+    "Julio",
+    "Hugo",
+    "Marcos",
+    "Benjamín",
+    "Emilio",
+    "Felipe",
+    "Enrique",
+    "Ramón",
+    "Román",
+    "María",
+    "Ana",
+    "Laura",
+    "Sofía",
+    "Carmen",
+    "Lucía",
+    "Paula",
+    "Elena",
+    "Sara",
+    "Claudia",
+    "Marta",
+    "Natalia",
+    "Isabel",
+    "Julieta",
+    "Valentina",
+    "Victoria",
+    "Andrea",
+    "Carolina",
+    "Gabriela",
+    "Daniela",
+    "Julia",
+    "Patricia",
+    "Beatriz",
+    "Raquel",
+    "Silvia",
+    "Emma",
+    "Alicia",
+    "Lorena",
+    "Vanessa",
+    "Ángela",
+    "Nuria",
+    "Teresa",
+    "Rosa",
+    "Alejandra",
+    "Mónica",
+    "Inés",
+    "Sandra",
+    "Sonia",
+    "Pilar",
+    "Verónica",
+    "Jessica",
+    "Gloria",
+    "Estela",
+    "Noelia",
+    "Miriam",
+    "Rebeca",
+    "Lidia",
+    "Catalina",
+    "Eva",
+    "Paloma"
+]
+
+apellidos = [
+    "García",
+    "Fernández",
+    "Rodríguez",
+    "López",
+    "Martínez",
+    "Pérez",
+    "Gómez",
+    "Díaz",
+    "Sánchez",
+    "Romero",
+    "González",
+    "Torres",
+    "Álvarez",
+    "Castro",
+    "Herrera",
+    "Ramírez",
+    "Flores",
+    "Vargas",
+    "Medina",
+    "Suárez",
+    "Mendoza",
+    "Morales",
+    "Ruiz",
+    "Aguilar",
+    "Alonso",
+    "Andrade",
+    "Arias",
+    "Avila",
+    "Ayala",
+    "Barrera",
+    "Benítez",
+    "Blanco",
+    "Cabrera",
+    "Campos",
+    "Cano",
+    "Cárdenas",
+    "Cortés",
+    "Delgado",
+    "Duarte",
+    "Escobar",
+    "Espinosa",
+    "Farías",
+    "Ferraro",
+    "Godoy",
+    "Guerrero",
+    "Gutiérrez",
+    "Iglesias",
+    "Jiménez",
+    "León",
+    "Lucero",
+    "Machado",
+    "Maldonado",
+    "Márquez",
+    "Molina",
+    "Montoya",
+    "Morán",
+    "Moretti",
+    "Moreno",
+    "Núñez",
+    "Ortiz",
+    "Paredes",
+    "Patiño",
+    "Pereira",
+    "Ponce",
+    "Quiroga",
+    "Ramos",
+    "Rivas",
+    "Rosso",
+    "Russo",
+    "Salazar",
+    "Salinas",
+    "Santos",
+    "Silva",
+    "Soto",
+    "Tapia",
+    "Valdez",
+    "Valencia",
+    "Vega",
+    "Velázquez",
+    "Vera",
+    "Villalba",
+    "Villanueva",
+    "Yáñez",
+    "Vázquez",
+    "Serrano",
+    "Noguera",
+    "Pizarro",
+    "Sosa",
+    "Cabré",
+    "Beltrán",
+    "Castañeda",
+    "Cervantes",
+    "Correa",
+    "Cuevas",
+    "Figueroa",
+    "Dávila",
+    "Escudero",
+    "Bustos",
+    "Caputo",
+    "Ferrari"
+]
+
+paises = [
+    "Argentina",
+    "Bolivia",
+    "Brasil",
+    "Chile",
+    "Colombia",
+    "Ecuador",
+    "Paraguay",
+    "Perú",
+    "Uruguay",
+    "Venezuela"
+]
+
 # Ordenar por tiempo (de menor a mayor)
 def obtener_tiempo(competidor):
     return competidor["tiempo_seg"]
+
+def pedir_tiempo(hms, min, max):
+    while True:
+        valor = int(input(f"Ingresar {hms}: ({min}-{max}): "))
+
+        if min <= valor <= max:
+            return valor
+        print("Valor inválido.")
+
+def generar_nombre_random():
+    nombre = nombres[random.randint(0,99)]
+    apellido = apellidos[random.randint(0,99)]
+    return (f"{nombre} {apellido}")
+
+def pais_random():
+    return paises[random.randint(0,9)]
 
 # Validación de cantidad mínima
 N = int(input("Ingrese la cantidad de competidores (mínimo 3): "))
@@ -14,17 +249,10 @@ while N < 3:
 print("\n====================")
 print("   RECORD ACTUAL  ")
 print("====================\n")
-horas_r = int(input("Horas(0-3): "))
-while horas_r < 0 or horas_r > 3:
-    print("Valor inválido.")
-minutos_r = int(input("Minutos (0-59): "))
-while minutos_r < 0 or minutos_r > 59:
-    print("Valor inválido.")
-    minutos_r = int(input("Minutos (0-59): "))
-segundos_r = int(input("Segundos (0-59): "))
-while segundos_r < 0 or segundos_r > 59:
-    print("Valor inválido.")
-    segundos_r = int(input("Segundos (0-59): "))
+
+horas_r = pedir_tiempo("Horas", 0, 3)
+minutos_r = pedir_tiempo("Minutos", 0, 59)
+segundos_r = pedir_tiempo("Segundos", 0, 59)
 
 record_seg = horas_r * 3600 + minutos_r * 60 + segundos_r
 
@@ -37,16 +265,25 @@ print("   COMPETIDORES  ")
 print("====================\n")
 
 for i in range(N):
-    print("\nCompetidor", i + 1)
-    nombre = input("Nombre del ciclista: ")
-    numero = int(input("Número identificatorio: "))
-    pais = input("País del competidor: ")
+    numero = i + 1
+    nombre = generar_nombre_random()
+    pais = pais_random()
 
-    # Generación aleatoria del tiempo
-    horas = random.randint(0, 3)
-    minutos = random.randint(0, 59)
-    segundos = random.randint(0, 59)
-    tiempo_seg = horas * 3600 + minutos * 60 + segundos
+    print(f"\nCompetidor número: {numero}")
+    print(f"Nombre del ciclista: {nombre}")
+    print(f"País del competidor: {pais}")
+
+    # Definir los rangos mínimos y máximos
+    min_seg = 30 * 60                   # Mínimo de 30 minutos
+    max_seg = (3 * 3600) + (59 * 60) + 59   # Máximo de 3 horas 59 minutos y 59 segundos
+
+    # Generar un único número aleatorio entre el mínimo y el máximo
+    tiempo_seg = random.randint(min_seg, max_seg)
+
+    # Dividir el total en horas, minutos y segundos
+    horas = tiempo_seg // 3600
+    minutos = (tiempo_seg - (horas * 3600)) // 60
+    segundos = (tiempo_seg - (horas * 3600)) - (minutos * 60)
 
     print("Tiempo generado:", horas, "h", minutos, "min", segundos, "seg")
 
@@ -95,4 +332,7 @@ for pais in tiempos_por_pais:
     h = promedio // 3600
     m = (promedio % 3600) // 60
     s = promedio % 60
-    print(f"{pais}: {h}h {m}m {s}s")
+    plural = ""
+    if(cant > 1):
+        plural = "es"
+    print(f"{pais} ({cant} competidor{plural}): {h}h {m}m {s}s")
